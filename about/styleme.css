@@ -1,0 +1,42 @@
+body{
+    /* margin: 0; */
+    padding: 0;
+    font-size: 100%;
+    font-family:Arial, Helvetica, sans-serif;
+    line-height: 1;
+    background-color: #c6d9ec;
+}
+
+#intro {
+    align-content: center;
+}
+
+#happy, #sad{
+    height: 30vh;
+    width: 30vw;
+}
+
+h3{
+    color: brown;
+}
+
+a{
+    text-decoration: none;
+}
+
+section::first-letter {
+    font-size: 2vmax;
+}
+
+.inner_dt {
+    color: #0000ff;
+}
+
+#movie_list {
+    transform: rotate(180deg);
+    margin-left: 3vmax;
+}
+
+#movie_list > li {
+    transform: rotate(-180deg);
+}

@@ -35,3 +35,7 @@ h1, h3{
     margin-left: 10%;
     margin-right: 10%;
 }
+
+ul{
+    list-style-image: url('../resource/images/recipeImages/pie_icon.gif');
+}

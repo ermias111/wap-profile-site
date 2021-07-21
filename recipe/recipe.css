@@ -39,3 +39,7 @@ h1, h3{
 ul{
     list-style-image: url('../resource/images/recipeImages/pie_icon.gif');
 }
+
+#copy_text{
+    margin-left: -8em;
+}

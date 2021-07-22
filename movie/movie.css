@@ -1,0 +1,122 @@
+body{
+    margin: 0%;
+    padding: 0%;
+    font-size: 8pt;
+    font-family: Verdana, Tahoma, sans-serif;
+    line-height: 1;
+    background-image: url('../resource/images/movie-images/background.png');
+    /* text-align: center; */
+    /* justify-content: center; */
+
+}
+
+header{
+    background-image: url('../resource/images/movie-images/bannerbg.png');
+    background-repeat: repeat-x;
+}
+
+header > img{
+    width: 50%;
+    margin-left: 25%;
+}
+
+h1{
+    font-size: 24pt;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#content{
+    width: 800px;
+    border: 4px gray solid;
+    border-radius: 20px;
+    margin: auto;
+    background-color: #A2B964;
+}
+
+#left_content{
+    float: left;
+    width: 550px;
+    background-image: url('../resource/images/movie-images/background.png');
+    overflow: auto;
+}
+
+#left_header{
+    background-image: url('../resource/images/movie-images/rbg.png');
+    background-repeat: repeat-x;
+}
+
+#percent{
+    color: red;
+    font-size: 48pt;
+    /* border: black solid 2px; */
+    vertical-align: center;
+}
+
+.review{
+    display: inline-block;
+    width: 47%;
+    margin-right: 2%;
+    margin-bottom: 20pt;
+}
+
+.break {
+    clear: left;
+}
+
+h1{
+    width: 15%;
+    margin: auto;
+    padding: 2%;
+}
+
+.rotten_icon{
+    float: left;
+    margin-right: 5px;
+}
+
+.review_text{
+    border: solid gray 2px;
+    border-radius: 10px;
+    background-color: #E8DC9B;
+    padding: 8px;
+}
+
+.person_icon{
+    float: left;
+}
+
+#right_content{
+    display: inline-block;
+    width: 250px;
+    /* background-color: #A2B964; */
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 8pt;
+}
+
+#right_content > img{
+    border-top-right-radius: 20px;
+}
+
+dl > dt{
+    font-weight: bold;
+    margin-top: 4pt;
+}
+
+dl{
+    padding-left: 3pt;   
+}
+
+dl > dd{
+    padding: 3px;
+}
+
+#page_number{
+    width: 15%;
+    margin: auto;
+}
+
+#validators{
+    width: 15%;
+    margin: auto;
+}

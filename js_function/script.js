@@ -139,7 +139,7 @@ function myFunctionTestForArrays(expected, test){
 
 console.log("Expected output of max(10, 20) is 20: " + myFunctionTest(20, max(10, 20)));
 console.log("Expected output of maxOfThree(10, 20, 30) is 30: " + myFunctionTest(30, maxOfThree(10, 20, 30)));
-console.log("Expected output of isVowle(\"i\") is 20: " + myFunctionTest(true, isVowle("i")));
+console.log("Expected output of isVowle(\"i\") is true: " + myFunctionTest(true, isVowle("i")));
 console.log("Expected output of sum([3, 5, 2, 6]) is 16: " + myFunctionTest(16, sum([3, 5, 2, 6])));
 console.log("Expected output of multile([3, 5, 2, 6]) is 180: " + myFunctionTest(180, multiple([3, 5, 2, 6])));
 console.log("Expected output of reverse(\"hello\") is : \"olleh\"" + myFunctionTest("olleh", reverse("hello")));

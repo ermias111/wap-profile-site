@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <title>CS472: ASCII Animation Viewer</title>
+        <link rel="stylesheet" href="./ascii.css" />
+        <script src="./ascii.js"></script>
+        <script src="./animations.js"></script>
+    </head>
+    <body>
+        <div id="page_title">
+            <span>CSE 190 M ASCII Animation Viewer</span>
+        </div>
+        <div id="animArea">
+            <textarea id="animAreaTxtA" name="animArea" rows="20" cols="80">
+
+            </textarea>
+        </div>
+        <div id="controlls">
+            <div>
+                <fieldset id="controllBtns">
+                    <legend>Play Controls:</legend>
+                    <button id="startBtn">Start</button>
+                    <button id="stopBtn">Stop</button>
+                </fieldset>
+            </div>
+            <div>
+                <fieldset>
+                    <legend>Animation:</legend>
+                    <select id="animSelect">
+                        <option value="blank">Blank</option>
+                        <option value="exercise">Exercise</option>
+                        <option value="juggler">Juggler</option>
+                        <option value="bike">Bike</option>
+                        <option value="dive">Dive</option>
+                        <option value="custom">Custom</option>
+                    </select>
+                </fieldset>
+            </div>
+            <div>
+                <fieldset>
+                    <legend>Size:</legend>
+                    <select id="fontSizeSelect">
+                        <option value="tiny">Tiny</option>
+                        <option value="small">Small</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="large">Large</option>
+                        <option value="exLarge">Extra Large</option>
+                        <option value="xxl">XXL</option>   
+                    </select>
+                </fieldset>
+            </div>
+            <div>
+                <fieldset>
+                    <legend>Speed:</legend>
+                    <input type="checkbox" id="turbo" name="speed"/> Turbo
+                </fieldset>
+            </div>
+        </div>
+    </body>
+</html>

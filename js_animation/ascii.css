@@ -1,0 +1,54 @@
+body{
+    /* margin: 0px; */
+    padding: 0px;
+    line-height: 1;
+    background-color: #CCCCFF;
+    font-family: sans-serif;
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+
+#page_title{
+    font-size: 32pt;
+    text-align: center;
+}
+
+#animArea{
+    text-align: center;
+}
+
+#animAreaTxtA{
+    margin: auto;
+    height: 400px;
+    width: 90%;
+    font-size: 12pt;
+}
+
+#controlls{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: auto auto auto auto;
+}
+
+
+fieldset{
+    border: solid 5px black;
+}
+
+
+#controllBtns{
+    text-align: center;
+}
+
+#animArea, #controlls{
+    margin: auto;
+}
+
+
+@media screen and (max-width:600px) {
+   
+    #controlls{
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+}

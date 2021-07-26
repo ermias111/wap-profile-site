@@ -15,11 +15,13 @@ window.onload = function(){
 
     stopBtn.disabled = true;
     startBtn.disabled = true;
+    txtArea.disabled = true;
 
     document.getElementById("stopBtn").onclick = function(){
         clearInterval(timer);
         startBtn.disabled = false;
         stopBtn.disabled = true;
+        txtArea.disabled = true;
     };
 
     document.getElementById("startBtn").onclick = function(){
@@ -27,6 +29,7 @@ window.onload = function(){
         if(listOfAnimation.value !== "blank"){
             startBtn.disabled = true;
             stopBtn.disabled = false;
+            txtArea.disabled = false;
         }
     };
 

@@ -9,22 +9,29 @@ let moviePixels;
 let turboCheckbox;
 let speed;
 
+let stopBtn;
+let startBtn;
+
 function setup(){
     "use strict";
-
-    stopOnClick(); 
-    startOnClick();
-    chooseAnimation();
-    changeFontSize();
-    turboCheck();
-
+    
+    turboCheckbox = document.getElementById("turbo");
     txtArea = document.getElementById("animAreaTxtA");
     listOfFont = document.getElementById("fontSizeSelect");
     listOfAnimation = document.getElementById("animSelect");
     currentMovie = ANIMATIONS[listOfAnimation.value];
     moviePixels = currentMovie.split("=====\n");
-    turboCheckbox = document.getElementById("turbo");
+    stopBtn = document.getElementById("stopBtn");
+    startBtn = document.getElementById("startBtn");
     speed = 250;
+    
+    turboCheck();
+    stopOnClick(); 
+    startOnClick();
+    chooseAnimation();
+    changeFontSize();
+
+    stopBtn.disabled = true;
 }
 
 
@@ -34,15 +41,21 @@ function stopOnClick(){
     // let txtArea = document.getElementById("animAreaTxtA");
     document.getElementById("stopBtn").onclick = function(){
         clearInterval(timer);
-        // window.alert("stop clicked");
-        // txtArea.value = ANIMATIONS["exercise"];
+        startBtn.disabled = false;
+        stopBtn.disabled = true;
+        
     }
 }
 
 function startOnClick(){
     document.getElementById("startBtn").onclick = function(){
-        // window.alert("start clicked");
         startMovie();
+        if(listOfAnimation.value !== "blank"){
+            
+            startBtn.disabled = true;
+            stopBtn.disabled = false;
+        }
+        
     }
 }
 
@@ -72,11 +85,33 @@ function chooseAnimation(){
         currentMovie = ANIMATIONS[listOfAnimation.value];
         moviePixels = currentMovie.split("=====\n");
         clearInterval(timer);
-        speed = 250;
+
+        startBtn.disabled = false;
+        stopBtn.disabled = true;
+        // speed = 250;
     }
 }
 
 
+
+function turboCheck(){
+
+    turboCheckbox.onchange = function(){
+        if(turboCheckbox.checked){
+            speed = 50;
+            clearInterval(timer);
+            startBtn.disabled = false;
+            stopBtn.disabled = true;
+        }else{
+            speed = 250;
+            clearInterval(timer);
+            startBtn.disabled = false;
+            stopBtn.disabled = true;
+        }
+    };
+
+    
+}
 
 function changeFontSize(){
     // txtArea = document.getElementById("animAreaTxtA");
@@ -137,14 +172,4 @@ function showPixelX(x){
     txtArea.value = moviePixels[x];
 }
 
-
-function turboCheck(){
-    window.alert("hello world");
-    if (!turboCheckbox.checked) {
-        window.alert("hello");
-        speed = 50;
-    } else {
-      speed = 250;
-    }
-}
 

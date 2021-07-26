@@ -12,26 +12,16 @@ window.onload = function(){
     let speed = 250;
     let stopBtn = document.getElementById("stopBtn");
     let startBtn = document.getElementById("startBtn");
-    
-    
-    turboCheck();
-    stopOnClick(); 
-    startOnClick();
-    chooseAnimation();
-    changeFontSize();
 
     stopBtn.disabled = true;
     startBtn.disabled = true;
 
-function stopOnClick(){
     document.getElementById("stopBtn").onclick = function(){
         clearInterval(timer);
         startBtn.disabled = false;
         stopBtn.disabled = true;
     };
-}
 
-function startOnClick(){
     document.getElementById("startBtn").onclick = function(){
         startMovie();
         if(listOfAnimation.value !== "blank"){
@@ -39,9 +29,7 @@ function startOnClick(){
             stopBtn.disabled = false;
         }
     };
-}
 
-function chooseAnimation(){
     listOfAnimation.onchange = function(){
         let val = listOfAnimation.value;
         switch(val){
@@ -63,17 +51,12 @@ function chooseAnimation(){
 
     
         currentMovie = animations[listOfAnimation.value];
-        // moviePixels = currentMovie.split("=====\n");
         clearInterval(timer);
 
         startBtn.disabled = false;
         stopBtn.disabled = true;
     };
-}
 
-
-
-function turboCheck(){
 
     turboCheckbox.onchange = function(){
         if(turboCheckbox.checked){
@@ -88,15 +71,12 @@ function turboCheck(){
             stopBtn.disabled = true;
         }
     };
-}
 
-function changeFontSize(){
     listOfFont.onchange = function(){
         let val = listOfFont.value;
         switch(val){
             case "tiny":
                 txtArea.style.fontSize = "7pt";
-                // window.alert("tiny clicked")
                 break;
             case "medium":
                 txtArea.style.fontSize = "12pt";
@@ -115,27 +95,26 @@ function changeFontSize(){
                 break;
         }
     };
-}
 
 
-function startMovie(){
-    let pixel = 0;
-    timer = setInterval(() => {
-        if(pixel == moviePixels.length){
-            pixel = 0;
-        }
-        showPixelX(pixel);
-        pixel++;
-    }, speed);
-}
+    function startMovie(){
+        let pixel = 0;
+        timer = setInterval(() => {
+            if(pixel == moviePixels.length){
+                pixel = 0;
+            }
+            showPixelX(pixel);
+            pixel++;
+        }, speed);
+    }
 
 
-function showPixelX(x){
-    txtArea = document.getElementById("animAreaTxtA");
-    listOfAnimation = document.getElementById("animSelect");
-    
-    currentMovie = animations[listOfAnimation.value];
-    moviePixels = currentMovie.split("=====\n");
-    txtArea.value = moviePixels[x];
-}
+    function showPixelX(x){
+        txtArea = document.getElementById("animAreaTxtA");
+        listOfAnimation = document.getElementById("animSelect");
+        
+        currentMovie = animations[listOfAnimation.value];
+        moviePixels = currentMovie.split("=====\n");
+        txtArea.value = moviePixels[x];
+    }
 };

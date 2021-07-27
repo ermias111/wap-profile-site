@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <title>web form</title>
+        <link rel="stylesheet" href="./style2.css"/>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+    </head>
+    <body>
+
+        <div id="header">
+            <div><span id="mum_title">MUM Golden Dome Market:::SRM System</span></div>
+            <div class="navv"><span>Product</span></div>
+            <div class="navv"><span>Suppliers</span></div>
+            <div id="auth">
+                <span>Hello!</span>
+                <button class="btn">Sign Out</button>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 mx-auto">
+                <h2>New Product Form</h2>    
+                <form>
+                    <div class="form-group row">
+                        <div class="col-sm-6">
+                            <label for="prodNum">Product Number</label>
+                            <input type="text" class="form-control" id="prodNum" placeholder="" required/>
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="quantity">Quantity in stock</label>
+                            <input type="text" class="form-control" id="quantity" placeholder="0" required/>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-6">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="" required/>
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="supplier">Supplier:</label>
+                            <!-- <input type="select" class="form-control" id="supplier" placeholder="Select a supplier" required/> -->
+                            <select class="form-control" placeholder="Select a supplier"> 
+                                <option selected>Open this select menu</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-6">
+                            <label for="unitPrice">Unit Price</label>
+                            <input type="text" class="form-control" id="unitPrice" placeholder="0.0" required/>
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="date">Date supplied</label>
+                            <input type="date" class="form-control" id="date" placeholder="yyyy-mm-dd" required/>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-6">
+                            
+                        </div>
+                        <div class="col-sm-6">
+                            <button class="btn btn-info">Reset</button>
+                            <button class="btn btn-danger">Cancel</button>
+                            <button class="btn btn-primary">Add Product</button>
+                        </div>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

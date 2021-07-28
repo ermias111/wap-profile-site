@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        <h2>1</h2> 
+        // -------------------------------------------------------------------------------------
+        // #1
+        var count = (function() {
+            var counter = 0;
+            console.log("hello");
+            return {
+                add: function(n){
+                    counter += n;
+                },
+        
+                reset: function(){
+                    counter = 0;
+                },
+        
+                value: function(){
+                    return counter;
+                }
+            }
+        })();
+        
+        count.add(1);
+        count.add(1);
+        console.log(count.value());
+        
+        <h2>2</h2>
+        // -------------------------------------------------------------------------------------
+        // 2: The counter is the free variable
+        //    Free variables are variables which are enclosed by a closure but declared 
+        //    in the lexical scope of the closure.
+        
+        
+        <h2>3</h2>
+        // -------------------------------------------------------------------------------------
+        // #3
+        function makeAdder(n){
+            var counter = 0;
+            return function(){
+                return counter += n;
+            };
+        } 
+        
+        const add5 = makeAdder(5);
+        add5();
+        add5();
+        console.log(add5());
+        
+        
+        <h2>4</h2>
+        // ----------------------------------------------------------------------------------------------------
+        //4: IIFE(Imediately Instansiated Function Expression) : Using IIFE to enclose the code with will make all
+        //   the variables local to their new block. 
+        
+        
+        <h2>5</h2>
+        // -------------------------------------------------------------------------------------
+        // #5
+        
+        const Employee = (function(){
+            let name = '';
+            let age = 0;
+            let salary = 0;
+            
+            const getName = function(){
+                return name;
+            };
+        
+            const getAge = function(){
+                return age;
+            };
+        
+            const getSalary = function(){
+                return salary;
+            };
+        
+            const setName = function(n){
+                name = n;
+            };
+        
+            const setAge = function(a){
+                age = a;
+            };
+        
+            const setSalary = function(s){
+                salary = s;
+            };
+        
+            const increaseSalary = function(percentage){
+                salary = getSalary() + (getSalary() * percentage);
+            };
+        
+        
+            const incrementAge = function(n){
+                age = getAge() + n;
+            }
+        
+            return{
+                setName: setName,
+                setAge: setAge,
+                setSalary: setSalary,
+                increaseSalary: increaseSalary,
+                incrementAge: incrementAge
+            }
+        
+        
+        })();
+        
+        
+        Employee.setSalary(10000);
+        Employee.increaseSalary(0.09);
+        
+        <h2>6</h2>
+        // -------------------------------------------------------------------------------------
+        // #6
+        
+        Employee.address = "";
+        
+        Employee.getAddress = function(){
+            return address;
+        };
+        
+        Employee.setAddress = function(adrs){
+            address = adrs;
+        };
+           
+        
+        Employee.setAddress("1000 4th st");
+        console.log(Employee.getAddress());
+        
+        
+         
+        // -------------------------------------------------------------------------------------
+        // with call
+        
+        var me = {
+            first: 'Josh',
+            last: 'Splinter',
+            getFullName: function() {
+              return this.first + ' ' + this.last;
+            }
+          };
+          
+          var you = {
+            first: 'William',
+            last: 'Smith'
+          };
+          
+          console.log(me.getFullName.call(you)); 
+        
+          // *******************************************
+          // with bind
+        
+          var me = {
+            first: 'Josh',
+            last: 'Splinter',
+            getFullName: function() {
+              return this.first + ' ' + this.last;
+            }
+          };
+          
+          var you = {
+            first: 'William',
+            last: 'Smith'
+          };
+          
+          console.log(me.getFullName.bind(you)()); 
+    </pre>
+</body>
+</html>

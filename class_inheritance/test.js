@@ -1,7 +1,7 @@
 
 // Account Testing
 
-describe("deposite", function () {
+describe("Deposite", function () {
     let account;
     before(function(){
         account = new Account(1);
@@ -16,7 +16,7 @@ describe("deposite", function () {
     });
 });
 
-describe("withdraw", function () {
+describe("Withdraw", function () {
     let account;
     before(function(){
         account = new Account(1);
@@ -32,7 +32,7 @@ describe("withdraw", function () {
     });
 });
 
-describe("illegal withdraw", function () {
+describe("Illegal withdraw", function () {
     let account;
     let withdrawFunc;
     before(function(){
@@ -54,7 +54,7 @@ describe("illegal withdraw", function () {
 
 // SavingAccount Testing
 
-describe("Create Saving Account", function () {
+describe("Create saving Account", function () {
     let account;
     before(function(){
         account = new SavingsAccount(1, 3);
@@ -70,7 +70,7 @@ describe("Create Saving Account", function () {
 });
 
 
-describe("Add Interest into current balance", function () {
+describe("Add interest into current balance", function () {
     let account;
     before(function(){
         account = new SavingsAccount(1, 3);
@@ -88,7 +88,7 @@ describe("Add Interest into current balance", function () {
 
 // checking accounts
 
-describe("Create Checking Account", function () {
+describe("Create checking Account", function () {
     let account;
     before(function(){
         account = new CheckingAccount(1, 100);
@@ -126,7 +126,7 @@ describe("Withdrawal with amount more than overdraft", function () {
 
 // Bank
 
-describe("Add Account for a bank", function () {
+describe("Add account for a bank", function () {
     let bankA;
     before(function(){
         bankA = new Bank();
@@ -134,14 +134,14 @@ describe("Add Account for a bank", function () {
     });
 
 
-    it("Adds Account to a bank",
+    it("adds account to a bank",
         function () {
             assert.equal(1000, bankA.getAccounts()[0].getNumber());
     });
 });
 
 
-describe("Add Saving account for a bank", function () {
+describe("Add saving account for a bank", function () {
     let bankA;
     let account;
     before(function(){
@@ -150,7 +150,7 @@ describe("Add Saving account for a bank", function () {
     });
 
 
-    it("Adds Saving account to a bank",
+    it("Adds saving account to a bank",
         function () {
             assert.equal(1001, bankA.getAccounts()[0].getNumber());
     });
@@ -166,7 +166,7 @@ describe("Add cheking account for a bank", function () {
     });
 
 
-    it("Add checking account to a bank",
+    it("add checking account to a bank",
         function () {
             assert.equal(1002, bankA.getAccounts()[0].getNumber());
     });
@@ -183,7 +183,7 @@ describe("Close an account", function () {
     });
 
 
-    it("Close an account",
+    it("close an account",
         function () {
             assert.equal(0, bankA.getAccounts().length);
     });
@@ -207,7 +207,7 @@ describe("End of month report", function () {
     });
 
 
-    it("End of month report for accounts in a bank",
+    it("end of month report for accounts in a bank",
         function () {
             assert.equal("\nInterest added SavingAccount 1005: balance: 100 interest: 4\n" +
              "Warning, low balance CheckingAccount 1006: balance: -50 overdraft limit: 200\n"

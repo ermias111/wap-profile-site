@@ -40,7 +40,7 @@ window.onload = function(){
         for(let i = 0; i < numberOfCircle.val(); i++){
             randomColor = colors[Math.floor(Math.random()*colors.length)];
             randPos = pos[Math.floor(Math.random()*pos.length)];
-            container.prepend($("<div>", {
+            container.append($("<div>", {
                 id: `${i}`,
                 class: "circle",
                 click: function(){
@@ -57,12 +57,13 @@ window.onload = function(){
                     "top": (top + randPos) + "vh",
                     "left": (left - randPos) + "%"
                 },
-                hover: (function(){
+                mouseover: function(){
                     $(this).css({"opacity": 0.2});
-                    
-                }, function(){
+                },
+
+                mouseout: function(){
                     $(this).css({"opacity": 1}); 
-                })
+                }
             }));
         }
 

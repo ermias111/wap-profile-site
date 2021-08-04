@@ -49,10 +49,17 @@ window.onload = function(){
                     "width": widthAmnt.val() + "px",
                     "height": widthAmnt.val() + "px",
                     "border-radius": 50 + "%",
+                    "opacity": 1,
                     "background-color": randomColor,
                     "top": (top) + "vh",
                     "left": (left - (i + 5)) + "%"
-                }
+                },
+                hover: (function(){
+                    $(".circle").css({"opacity": 0.2});
+                    
+                }, function(){
+                    $(".circle").css({"opacity": 1}); 
+                })
             }));
         }
 

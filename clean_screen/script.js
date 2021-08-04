@@ -9,6 +9,7 @@ window.onload = function(){
     let top = 25;
     let left = 50;
     let colors = ["red", "yellow", "black", "gray", "purple", "lightblue"];
+    let pos = [7, 2, 10, 13, 15, 5];
 
     function resizeCircle(intv, gsize){
 
@@ -34,9 +35,11 @@ window.onload = function(){
 
     start.click(() => {
         var randomColor = '';
+        var randPos;
 
         for(let i = 0; i < numberOfCircle.val(); i++){
             randomColor = colors[Math.floor(Math.random()*colors.length)];
+            randPos = pos[Math.floor(Math.random()*pos.length)];
             container.prepend($("<div>", {
                 id: `${i}`,
                 class: "circle",
@@ -51,14 +54,14 @@ window.onload = function(){
                     "border-radius": 50 + "%",
                     "opacity": 1,
                     "background-color": randomColor,
-                    "top": (top) + "vh",
-                    "left": (left - (i + 5)) + "%"
+                    "top": (top + randPos) + "vh",
+                    "left": (left - randPos) + "%"
                 },
                 hover: (function(){
-                    $(".circle").css({"opacity": 0.2});
+                    $(this).css({"opacity": 0.2});
                     
                 }, function(){
-                    $(".circle").css({"opacity": 1}); 
+                    $(this).css({"opacity": 1}); 
                 })
             }));
         }

@@ -32,7 +32,7 @@ app.use('/results', (req, res, next) => {
     let name = req.body.name;
     let age = req.body.age;
 
-    res.redirect(`/output?name=${name}&age=${age}`);
+    res.redirect(303, `/output?name=${name}&age=${age}`);
 });
 
 

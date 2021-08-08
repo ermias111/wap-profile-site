@@ -1,0 +1,23 @@
+<%- include('./head.js') %>
+<div>
+    <h2>Shopping List</h2>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+        </tr>
+        <% products.map((product) => { -%>
+            <tr>
+                <td><%= product.id %></td>
+                <td><%= product.name %></td>
+                <td><%= product.description %></td>
+                <td><%= product.price %></td>
+            </tr>
+            <%
+        }) %>
+    </table>
+</div>
+
+<%- include('./end.js') %>

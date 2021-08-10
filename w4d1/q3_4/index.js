@@ -53,14 +53,21 @@ app.get('/', (req, res, next) => {
 
 app.post('/addToCart', (req, res, next) => {
     let name = req.body.name;
-    let price = req.body.price;
+    let price = parseInt(req.body.price);
     
     if(!req.session.cart[name]){
-        req.session.cart[name] = 1;   // initialize if it doesn't exist
+        
+        // initialize if it doesn't exist
+        req.session.cart[name] = {
+            'name': name,
+            'price': price,
+            'quantity': 1
+        } 
+        
     }else{
-        req.session.cart[name] += 1;  // increament its quantity if it is already in the cart
+        req.session.cart[name].price += price;
+        req.session.cart[name].quantity += 1;  // increament its quantity if it is already in the cart
     }
-    
     res.redirect(303, '/cart');
 });
 

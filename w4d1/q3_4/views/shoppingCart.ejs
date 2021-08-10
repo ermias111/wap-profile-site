@@ -4,13 +4,14 @@
     <table>
         <tr>
             <th>Name</th>
+            <th>Price</th>
             <th>Quantity</th>
         </tr>
         <% for(let product in cart) { -%>
             <tr>
-                <td><%= product %></td>
-                <td><%= cart[product] %></td>
-                <!-- <td><%= product.quantity %></td> -->
+                <td><%= cart[product].name %></td>
+                <td><%= cart[product].price %></td>
+                <td><%= cart[product].quantity %></td>
             </tr>
             <%
         } %>

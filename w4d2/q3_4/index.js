@@ -9,6 +9,7 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.urlencoded({extended: false}));
 app.use('/css', express.static(path.join(__dirname, 'css')));
+app.use('/js', express.static(path.join(__dirname, 'views', 'js')));
 
 let products = [
     {
@@ -69,7 +70,7 @@ app.post('/addToCart', (req, res, next) => {
         req.session.cart[name].price += price;
         req.session.cart[name].quantity += 1;  // increament its quantity if it is already in the cart
     }
-    res.redirect(303, '/cart');
+    res.redirect(303, '/');
 });
 
 app.get('/cart', (req, res, next) => {

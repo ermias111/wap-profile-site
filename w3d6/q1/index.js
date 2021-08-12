@@ -10,7 +10,7 @@ app.get('/', (req, res) => {
     const date = new Date();
     res.render("index", {
         time: date.toTimeString(),
-        pageStyle: date.getHours() > 6 || date.getHours() < 18 ? '/css/day.css': '/css/night.css'
+        pageStyle: date.getHours() > 6 && date.getHours() < 18 ? '/css/day.css': '/css/night.css'
     });
 });
 

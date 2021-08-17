@@ -10,18 +10,19 @@ $(() => {
         setTimeout(clearMsg, 3000);
     }
 
-    $(".submitBtn").click(() => {
+    $(".submitBtn").click(function(){
         let id = $(this).attr("id");
-        console.log(id);
+        
 
-        let data = {
+        let data_ = {
             name: $(`#name${id}`).text(),
             price: $(`#price${id}`).text()
         }
 
         $.post({
             url: '/addToCart',
-            data: JSON.stringify(data)
+            data: (JSON.stringify(data_)),
+            contentType: "application/json"
         }).done(successMsg)
         .fail(failMsg)
     });

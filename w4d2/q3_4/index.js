@@ -7,7 +7,7 @@ const app = express();
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-app.use(express.urlencoded({extended: false}));
+app.use(express.json({extended: false}));
 app.use('/css', express.static(path.join(__dirname, 'css')));
 app.use('/js', express.static(path.join(__dirname, 'views', 'js')));
 
@@ -53,10 +53,10 @@ app.get('/', (req, res, next) => {
 });
 
 
-app.post('/addToCart', (req, res, next) => {
+app.post('/addToCart', (req, res) => {
     let name = req.body.name;
     let price = parseInt(req.body.price);
-    
+
     if(!req.session.cart[name]){
         
         // initialize if it doesn't exist
@@ -77,4 +77,4 @@ app.get('/cart', (req, res, next) => {
     res.render('shoppingCart', {cart: req.session.cart})
 });
 
-app.listen(3000);
+app.listen(3001);
